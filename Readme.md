@@ -17,9 +17,6 @@ file `./secrets.py`.
 
 Event | Count | Date 
 ----- | ------|-----
-Content from cell 1 | Content from cell 2 | Three
-Content in the first column | Content in the second column | three
-
 Columbus Day | 4 days | (2015-10-12)
 Last Day of Classes | 73 days | (2015-12-20)
 Spring Semester|103 days | (2016-01-19)

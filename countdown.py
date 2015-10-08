@@ -6,6 +6,11 @@
 from datetime import date
 from yattag import Doc, indent
 
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+recipient = 'mhlinder@gmail.com'
 dates = [{'title': 'Qual', 'date': date(2016, 1, 18)},
          {'title': 'NSF', 'date': date(2015, 10, 30)},
          {'title': 'Paris', 'date': date(2015, 12, 19)}]
@@ -16,7 +21,7 @@ doc.asis('<!DOCTYPE html>')
 
 with tag('html'):
     with tag('body',
-             style = 'font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;'):
+             style = 'font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;color=black'):
         with tag('div', style = 'padding-left:15px;'):
             with tag('h1'):
                 text('Things to Look Forward To')
@@ -41,4 +46,17 @@ with tag('html'):
                         with tag('td'):
                             text('({0})'.format(d['datestr']))
 
-print(indent(doc.getvalue()))
+# Send as an email
+msg = MIMEText(indent(doc.getvalue()), 'html')
+
+sender = 'mhlinder@gmail.com'
+msg['To'] = recipient
+msg['From'] = sender
+msg['Subject'] = 'Countdown {0}'.format(today.strftime('%Y-%m-%d'))
+
+server = smtplib.SMTP('smtp.gmail.com:587')
+server.starttls()
+server.login(username, password)
+server.sendmail(sender, recipient, msg.as_string())
+server.quit()
+

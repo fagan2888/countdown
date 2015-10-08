@@ -1,18 +1,5 @@
 #!/usr/bin/env python
 
-# Email yourself a reminder of things to come. Expects to be sent from
-# GMail using Python 3.*
-# 
-# GMail may fail the first time you run this and suggest you login;
-# visit https://support.google.com/mail/answer/78754
-# before running this script and "allow less secure apps access to
-# your account."
-#
-# Assumes variables `username` and `password` for GMail are set in a
-# file `./secrets.py`.
-# 
-# See https://www.campaignmonitor.com/css/ for email client CSS support
-
 from datetime import date
 from yattag import Doc, indent
 
@@ -20,6 +7,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+# Parameters
 from secrets import username, password
 sender = 'you@gmail.com'
 recipient = 'mhlinder@gmail.com'

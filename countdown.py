@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# Email yourself a reminder of things to come. Expects to be sent from
+# GMail using Python 3.*
+# 
 # GMail may fail the first time you run this and suggest you login;
 # visit https://support.google.com/mail/answer/78754
 # before running this script and "allow less secure apps access to
@@ -8,7 +11,6 @@
 # Assumes variables `username` and `password` for GMail are set in a
 # file `./secrets.py`.
 # 
-# Expects Python 3.*
 # See https://www.campaignmonitor.com/css/ for email client CSS support
 
 from datetime import date
@@ -19,12 +21,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 from secrets import username, password
-sender = 'mhlinder@gmail.com'
+sender = 'you@gmail.com'
 recipient = 'mhlinder@gmail.com'
 # Order doesn't matter
-dates = [{'title': 'Qual', 'date': date(2016, 1, 18)},
-         {'title': 'NSF', 'date': date(2015, 10, 30)},
-         {'title': 'Paris', 'date': date(2015, 12, 19)}]
+dates = [{'title': 'Spring Semester', 'date': date(2016, 1, 19)},
+         {'title': 'Last Day of Classes', 'date': date(2015, 12, 20)},
+         {'title': 'Columbus Day', 'date': date(2015, 10, 12)}]
 
 # Generate an HTML document
 doc, tag, text = Doc().tagtext()

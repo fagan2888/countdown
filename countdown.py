@@ -19,6 +19,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 from secrets import username, password
+sender = 'mhlinder@gmail.com'
 recipient = 'mhlinder@gmail.com'
 # Order doesn't matter
 dates = [{'title': 'Qual', 'date': date(2016, 1, 18)},
@@ -62,7 +63,6 @@ with tag('html'):
 # Format as a MIME object
 msg = MIMEText(indent(doc.getvalue()), 'html')
 
-sender = 'mhlinder@gmail.com'
 msg['To'] = recipient
 msg['From'] = sender
 msg['Subject'] = 'Countdown {0}'.format(today.strftime('%Y-%m-%d'))

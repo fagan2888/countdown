@@ -1,5 +1,13 @@
 #!/usr/bin/env python
 
+# GMail may fail the first time you run this and suggest you login;
+# visit https://support.google.com/mail/answer/78754
+# before running this script and "allow less secure apps access to
+# your account."
+#
+# Assumes variables `username` and `password` for GMail are set in a
+# file `./secrets.py`.
+# 
 # Expects Python 3.*
 # See https://www.campaignmonitor.com/css/ for email client CSS support
 
@@ -46,7 +54,7 @@ with tag('html'):
                         with tag('td'):
                             text('({0})'.format(d['datestr']))
 
-# Send as an email
+# Format as a MIME object
 msg = MIMEText(indent(doc.getvalue()), 'html')
 
 sender = 'mhlinder@gmail.com'
@@ -54,6 +62,7 @@ msg['To'] = recipient
 msg['From'] = sender
 msg['Subject'] = 'Countdown {0}'.format(today.strftime('%Y-%m-%d'))
 
+# Send with SMTP
 server = smtplib.SMTP('smtp.gmail.com:587')
 server.starttls()
 server.login(username, password)

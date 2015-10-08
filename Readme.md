@@ -11,13 +11,15 @@ file `./secrets.py`.
 
 [See](https://www.campaignmonitor.com/css/) email client CSS support.
 
+An email similar to the following is sent:
+
 # Countdown 2015-10-08
 
 ## Things to Look Forward To
 
 Event | Count | Date 
 ----- | ------|-----
-Columbus Day | 4 days | (2015-10-12)
-Last Day of Classes | 73 days | (2015-12-20)
-Spring Semester|103 days | (2016-01-19)
+**Columbus Day** | 4 days | (2015-10-12)
+**Last Day of Classes** | 73 days | (2015-12-20)
+**Spring Semester** | 103 days | (2016-01-19)
 

@@ -1,34 +1,44 @@
 #!/usr/bin/env python
 
-# I expect Python 3.*!
+# Expects Python 3.*
+# See https://www.campaignmonitor.com/css/ for email client CSS support
 
 from datetime import date
 from yattag import Doc, indent
 
-doc, tag, text = Doc().tagtext()
-
-with tag('h1'):
-    text('Welcome to the future')
-
 dates = [{'title': 'Qual', 'date': date(2016, 1, 18)},
-         {'title': 'NSF', 'date': date(2015, 10, 30)}]
-today = date.today()
+         {'title': 'NSF', 'date': date(2015, 10, 30)},
+         {'title': 'Paris', 'date': date(2015, 12, 19)}]
 
-for d in dates:
-    d['d'] = (d['date'] - today).days
-    d['datestr'] = d['date'].strftime('%Y-%m-%d')
-    
-w_title = max([len(d['title']) for d in dates]) + 1
-w_count = max([len(str(d['d'])) for d in dates])
+# Generate an HTML document
+doc, tag, text = Doc().tagtext()
+doc.asis('<!DOCTYPE html>')
 
-with tag('ul'):
-    for d in dates:
-        with tag('li'):
-            text('{0:{1}}: {2:{3}} days ({4})'
-                 .format(d['title'], w_title,
-                         d['d'], w_count,
-                         d['datestr']
-                     )
-             )
+with tag('html'):
+    with tag('body',
+             style = 'font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;'):
+        with tag('div', style = 'padding-left:15px;'):
+            with tag('h1'):
+                text('Things to Look Forward To')
+        
+            # Construct date objects
+            today = date.today()
+            for d in dates:
+                d['d'] = (d['date'] - today).days
+                d['datestr'] = d['date'].strftime('%Y-%m-%d')
+            # Sort chronologically
+            dates = sorted(dates, key=lambda k: k['date'])
+        
+            with tag('table'):
+                for d in dates:
+                    with tag('tr'):
+                        with tag('td'):
+                            doc.asis('&bull; ')
+                            with tag('b'):
+                                text(format(d['title']))
+                        with tag('td', style = 'padding:0px 15px;'):
+                            text('{0} days'.format(d['d']))
+                        with tag('td'):
+                            text('({0})'.format(d['datestr']))
 
 print(indent(doc.getvalue()))

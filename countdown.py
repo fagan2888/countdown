@@ -25,8 +25,6 @@ recipient = 'mhlinder@gmail.com'
 dates = [{'title': 'Qual', 'date': date(2016, 1, 18)},
          {'title': 'Last Day of Classes', 'date': date(2015, 12, 20)},
          {'title': 'Columbus Day', 'date': date(2015, 10, 12)}]
-         # {'title': 'NSF', 'date': date(2015, 10, 30)},
-         # {'title': 'Paris', 'date': date(2015, 12, 19)}]
 
 # Generate an HTML document
 doc, tag, text = Doc().tagtext()

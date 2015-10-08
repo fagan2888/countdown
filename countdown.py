@@ -18,10 +18,14 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+from secrets import username, password
 recipient = 'mhlinder@gmail.com'
+# Order doesn't matter
 dates = [{'title': 'Qual', 'date': date(2016, 1, 18)},
-         {'title': 'NSF', 'date': date(2015, 10, 30)},
-         {'title': 'Paris', 'date': date(2015, 12, 19)}]
+         {'title': 'Last Day of Classes', 'date': date(2015, 12, 20)},
+         {'title': 'Columbus Day', 'date': date(2015, 10, 12)}]
+         # {'title': 'NSF', 'date': date(2015, 10, 30)},
+         # {'title': 'Paris', 'date': date(2015, 12, 19)}]
 
 # Generate an HTML document
 doc, tag, text = Doc().tagtext()
@@ -41,7 +45,8 @@ with tag('html'):
                 d['datestr'] = d['date'].strftime('%Y-%m-%d')
             # Sort chronologically
             dates = sorted(dates, key=lambda k: k['date'])
-        
+
+            # Format dates into a table
             with tag('table'):
                 for d in dates:
                     with tag('tr'):

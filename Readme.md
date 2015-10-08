@@ -15,13 +15,10 @@ file `./secrets.py`.
 
 ## Things to Look Forward To
 
-Content from cell 1 | Content from cell 2 | Content from cell 2
-Content in the first column | Content in the second column | Content in the second column
-
-First Header | Second Header | Second Header
------------- | ------------- | -------------
-Content from cell 1 | Content from cell 2 | Content from cell 2
-Content in the first column | Content in the second column | Content in the second column
+Event | Count | Date 
+----- | ------|-----
+Content from cell 1 | Content from cell 2 | Three
+Content in the first column | Content in the second column | three
 
 Columbus Day | 4 days | (2015-10-12)
 Last Day of Classes | 73 days | (2015-12-20)

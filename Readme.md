@@ -14,17 +14,10 @@ file `./secrets.py`.
 # Countdown 2015-10-08
 
 ## Things to Look Forward To
-
-
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
-Content in the first column | Content in the second column
-
-First Header | Second Header | three
------------- | ------------- | --
-Content from cell 1 | Content from cell 2 | cell3
-Content in the first column | Content in the second column | col3
+First Header | Second Header | Second Header
+------------ | ------------- | -------------
+Content from cell 1 | Content from cell 2 | Content from cell 2
+Content in the first column | Content in the second column | Content in the second column
 
 Columbus Day | 4 days | (2015-10-12)
 Last Day of Classes | 73 days | (2015-12-20)

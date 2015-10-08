@@ -16,8 +16,6 @@ file `./secrets.py`.
 ## Things to Look Forward To
 
 | Columbus Day | 4 days | (2015-10-12)|
-|-------------|------------------|
 | Last Day of Classes | 73 days | (2015-12-20)|
-|-------------|------------------|
 | Spring Semester|103 days | (2016-01-19)|
 

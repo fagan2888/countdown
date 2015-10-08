@@ -19,10 +19,6 @@ dates = [{'title': 'Spring Semester', 'date': date(2016, 1, 19)},
 # Generate an HTML document
 doc, tag, text = Doc().tagtext()
 doc.asis('<!DOCTYPE html>')
-First Header | Second Header | Second Header
------------- | ------------- | -------------
-Content from cell 1 | Content from cell 2 | Content from cell 2
-Content in the first column | Content in the second column | Content in the second column
 
 with tag('html'):
     with tag('body',

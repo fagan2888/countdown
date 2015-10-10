@@ -10,7 +10,7 @@ from email.mime.text import MIMEText
 # Parameters
 from secrets import username, password
 sender = 'you@gmail.com'
-recipient = 'mhlinder@gmail.com'
+recipient = 'you@gmail.com'
 # Order doesn't matter
 dates = [{'title': 'Spring Semester', 'date': date(2016, 1, 19)},
          {'title': 'Last Day of Classes', 'date': date(2015, 12, 20)},
